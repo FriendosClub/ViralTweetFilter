@@ -11,19 +11,19 @@ There are a few manual configuration steps one needs to take before they can
 begin working on this project.
 
 1. Install dependencies
-  - Make sure you have a flavor of Firefox installed (default, beta, developer edition, etc.)
-  - Install Yarn if needed
-  - Run `yarn install` in the root of this project to install dependencies
+   - Make sure you have a flavor of Firefox installed (default, beta, developer edition, etc.)
+   - Install Yarn if needed
+   - Run `yarn install` in the root of this project to install dependencies
 2. Set up development profile
-  1. Open Firefox and navigate to `about:profiles`
-  2. Click the "Create a New Profile" button
-  3. In the pop-up menu, specify `web-ext-viraltweetfilter` for the profile name
-  4. Use the default profile directory
-  5. Click "Done" to create the development profile.
+   1. Open Firefox and navigate to `about:profiles`
+   2. Click the "Create a New Profile" button
+   3. In the pop-up menu, specify `web-ext-viraltweetfilter` for the profile name
+   4. Use the default profile directory
+   5. Click "Done" to create the development profile.
 3. (Optional) Specify the version of Firefox you're using
-  - If you have multiple versions of Firefox installed, you can use the
-    `WEB_EXT_FIREFOX` environment variable to tell `web-ext` which version to
-    use. [Click here to read the web-ext documentation for this feature.][1]
+   - If you have multiple versions of Firefox installed, you can use the
+     `WEB_EXT_FIREFOX` environment variable to tell `web-ext` which version to
+     use. [Click here to read the web-ext documentation for this feature.][1]
 
 
 ### Developing the Extension
