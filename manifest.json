@@ -16,5 +16,24 @@
         "src/content_scripts/viraltweetfilter.js"
       ]
     }
-  ]
+  ],
+  "page_action": {
+    "default_title": "Viral Tweet Filter",
+    "default_popup": "src/page_actions/config.html",
+    "default_icon": {
+      "19": "icons/vtf-19.png",
+      "38": "icons/vtf-38.png"
+    },
+    "show_matches": [
+      "*://twitter.com/home*"
+    ]
+  },
+  "permissions": [
+    "storage"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{6366a74b-ca40-48bc-83d9-ad8406780c1f}"
+    }
+  }
 }
