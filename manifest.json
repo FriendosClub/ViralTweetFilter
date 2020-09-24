@@ -13,7 +13,7 @@
         "*://twitter.com/home*"
       ],
       "js": [
-        "viraltweetfilter.js"
+        "src/content_scripts/viraltweetfilter.js"
       ]
     }
   ]
