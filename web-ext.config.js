@@ -11,7 +11,6 @@ module.exports = {
   // command-specific options
   run: {
     browserConsole: true,
-    firefox: 'firefoxdeveloperedition',
     firefoxProfile: 'web-ext-viraltweetfilter',
     keepProfileChanges: true,
     startUrl: ['https://twitter.com/home'],
