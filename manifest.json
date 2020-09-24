@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Viral Tweet Filter",
+  "version": "0.1.0",
+  "description": "Filters Tweets based on a customizable threshold of likes/retweets.",
+  "icons": {
+    "48": "icons/vtf-48.png",
+    "96": "icons/vtf-96.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://twitter.com/home*"
+      ],
+      "js": [
+        "viraltweetfilter.js"
+      ]
+    }
+  ]
+}
