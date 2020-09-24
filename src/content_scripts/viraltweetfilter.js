@@ -10,15 +10,13 @@
 
 console.log('[ViralTweetFilter]', 'Loaded');
 
+// TODO: Localize number suffixes
 const suffixes = {
   K: 1000,
   M: 1000000,
 };
-
 const attrName = 'vtfChecked';
-
-// TODO: Allow user to configure threshold
-const threshold = 100;
+let userThreshold = 10000;
 
 function shouldCheck(tweet) {
   if (tweet.getAttribute(attrName)) { return false; }
@@ -43,7 +41,8 @@ function filterTweet(tweet) {
     const likesText = likesSpan.innerText;
 
     // Expect nums like 1, 10, 100, 1K, 1.2K, 10.2K, 100.2K, 1M, 1.2M
-    // TODO: Allow for a different decimal separator (i.e. ',') for Europeans
+    // TODO: Localize decimal separator (some use ',' instead of '.')
+    // TODO: (See line 13) Localize number suffixes
     let numText = likesText.match(/^([0-9]+\.?[0-9]?)/g);
     let suffix = likesText.match(/(K|M)$/g);
 
@@ -66,7 +65,7 @@ function filterTweet(tweet) {
       ? parseInt(parseFloat(numText, 10) * suffixes[suffix], 10)
       : parseInt(numText, 10);
 
-    if (likes > threshold) {
+    if (likes > userThreshold) {
       debugMsg(`Hiding a Tweet with ${likes} likes.`);
       // eslint-disable-next-line no-param-reassign
       tweet.style.maxHeight = '0px';
@@ -100,6 +99,26 @@ window.addEventListener('scroll', () => {
       });
   });
 });
+
+// Attempt to retrieve user prefs as soon as the script activates
+(() => {
+  debugMsg('Getting threshold from sync storage...');
+
+  chrome.storage.sync.get('threshold', (items) => {
+    if (typeof items.threshold === 'undefined') {
+      debugMsg('items[threshold] is undefined:', items);
+      debugMsg('Attempting to instantiate sync storage.');
+
+      chrome.storage.sync.set({ threshold: userThreshold }, () => {
+        debugMsg('Instantiated sync storage.');
+      });
+    } else {
+      const { threshold } = items;
+      debugMsg('Got threshold of', threshold);
+      userThreshold = threshold;
+    }
+  });
+})();
 
 /**
  * ViralTweetFilter - Browser extension to filter "Viral" Tweets on Twitter

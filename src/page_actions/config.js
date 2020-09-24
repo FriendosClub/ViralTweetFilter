@@ -4,30 +4,54 @@
  * See the bottom of this file for license information.
 */
 
+// Form field references
+const thresholdInput = document.querySelector('#threshold');
+const settingsForm = document.querySelector('#settings');
+const outputWrapper = document.querySelector('#output');
+const outputText = document.querySelector('#outputText');
+
 function initThresholdStorage() {
-  chrome.storage.sync.set({ threshold: 10000 }, () => { });
+  chrome.storage.sync.set({ threshold: 10000 });
 }
 
 function initThresholdInput(threshold) {
-  if (!threshold || typeof (threshold) === 'undefined') {
-    initThresholdStorage();
-    return;
-  }
-
-  const thresholdInput = document.querySelector('#threshold');
   thresholdInput.value = threshold;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   chrome.storage.sync.get(['threshold'], (items) => {
     const { threshold } = items;
+    const tInt = parseInt(threshold, 10);
 
-    if (threshold) {
-      initThresholdInput(threshold);
+    if (!Number.isNaN(tInt) && threshold >= 1) {
+      initThresholdInput(tInt);
     } else {
       initThresholdStorage();
     }
   });
+});
+
+function resetOutput() {
+  outputWrapper.classList.add('collapsed');
+  outputWrapper.classList.remove('error', 'success');
+}
+
+settingsForm.addEventListener('submit', (event) => {
+  event.preventDefault(); // Don't actually submit the form
+
+  const threshold = parseInt(thresholdInput.value, 10);
+  // TODO: Localize success and error messages
+  if (Number.isNaN(threshold) || threshold < 1) {
+    outputText.innerHTML = 'Error: Not a valid number.';
+    outputWrapper.classList.add('failure');
+  } else {
+    outputText.innerHTML = 'Settings saved.';
+    outputWrapper.classList.add('success');
+  }
+
+  outputWrapper.classList.remove('collapsed');
+  window.setTimeout(() => { resetOutput(); }, 4000);
+  chrome.storage.sync.set({ threshold });
 });
 
 /**

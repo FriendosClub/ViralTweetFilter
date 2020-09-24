@@ -11,12 +11,18 @@
 <body>
   <div id="container">
     <section>
-      <form onsubmit="return false;">
+      <form id="settings">
         <fieldset>
+          <!-- TODO: Localize text displayed in this field -->
           <legend>Viral Tweet Filter Settings</legend>
           <label for="threshold">Minimum likes to hide Tweet</label>
-          <input name="threshold" id="threshold" type="number" min="1" placeholder="10,000">
-          <input type="submit" value="Save">
+          <input name="threshold" id="threshold" type="number" min="1" max="9007199254740991" placeholder="10000">
+          <input type="submit" id="saveSettings" value="Save">
+          <div id="output" class="collapsed">
+            <output>
+              <p id="outputText"></p>
+            </output>
+          </div>
         </fieldset>
       </form>
     </section>

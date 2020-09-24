@@ -1,3 +1,15 @@
+.collapsed {
+  display: none;
+}
+
+.error {
+  color: #c34138;
+}
+
+.success {
+  color: #0B7537;
+}
+
 input[type="submit"] {
   float: right;
   margin-bottom: 0!important;
