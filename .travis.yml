@@ -1,0 +1,21 @@
+env:
+  global:
+language: node_js
+node_js:
+- 12
+cache:
+  yarn: true
+script:
+  - yarn lint
+  - yarn build
+before_deploy:
+  - yarn sign
+deploy:
+  provider: releases
+  api_key:
+    secure: 5PO3pfya+EeOsTdGF3k0iGIYh0CRtt3+xX6KjWDxBGiW9h/8u+QtcxaOmK2m5w33W07apq48r8CwUSuCCx4MqClABpuPLZUYjut/zjyZ77Qq2BOOF+1sLHFNU1qz1F2ymmajmpzvB6GaeazSKGs6yza1r227UUo8NcFXaYvXcSkLDwyW5RLsWehNwba+lgjQQB5kL0UnMTCGsHYnQnjspb/43/rZkIhtg3s3EQTqxgXLrZQcg4kUy/jgk5DBXHPyPvTK5tRHMxwjDjgnSVY/tsLtO94c6q1y1XtcfcPrx7tscPUzzeSzlDuxYLaJUeNBON+73uzLTg5eYCJavLcsL0S3hiSCwaCowKz9s3ZI7rwmoIOqncd8Jeq1o/MfR/sE+NGwlK3eU3P3wuWewJPZdbU57C5oAr7ZwyG6D+fB0k4Vy0u7Q06NgV3+lIz96jcHgcVjSaBGZUl+Pv95KFio3nhs/oHbAxpNXK6gW/43IG1irEQId9G7ZSOZhk22lwbqGMsbY92CFUqCIF0NQlhGxHXjdHPewvLZDQqAhK5lLab9EywK64sAhW+cTC/St0/fhxSQ8l9oO3gUO8ssxvszMCHfPxGZou10bcAPKXRT/MVHcvWzjk4f29ytoWI+BCg2eZ43hQVvy3FK7KKcLa8oOq7nryGmU+Fbgzy3auDXl1w=
+  file_glob: true
+  file: web-ext-artifacts/viral_tweet_filter-*.*.*-an+fx.xpi
+  on:
+    tags: true
+  skip_cleanup: true

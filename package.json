@@ -17,6 +17,7 @@
     "start": "web-ext --config=web-ext.config.js run",
     "build": "web-ext --config=web-ext.config.js build",
     "sign": "web-ext --config=web-ext.config.js sign",
-    "lint": "web-ext --config=web-ext.config.js lint && eslint . --max-warnings 0"
+    "lint": "web-ext --config=web-ext.config.js lint && eslint . --max-warnings 0",
+    "test": "yarn lint && yarn build"
   }
 }
