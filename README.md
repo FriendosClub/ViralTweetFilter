@@ -9,3 +9,4 @@ A tool to hide Tweets that have more than a certain amount of likes.
   - [ ] for the decimal separator in `viraltweetfilter.js`
 - [ ] Allow user to configure 'like' threshold
 - [ ] Set up build/publish workflow
+- [ ] Chrome support
