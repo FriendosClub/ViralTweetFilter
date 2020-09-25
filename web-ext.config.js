@@ -30,7 +30,7 @@ module.exports = {
   sign: {
     // Signing takes a __long__ time
     //       m    s    ms
-    timeout: 10 * 60 * 1000,
+    timeout: 30 * 60 * 1000,
   },
 };
 
