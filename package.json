@@ -1,23 +1,27 @@
 {
   "name": "viraltweetfilter",
-  "version": "0.2.0",
+  "version": "0.2.3",
   "description": "Browser extension to filter \"viral\" Tweets from your timeline.",
   "main": "index.js",
   "repository": "https://github.com/FriendosClub/ViralTweetFilter.git",
   "author": "Ralph Drake <rama.o.ralph@gmail.com>",
   "license": "AGPL-3.0-or-later",
   "private": false,
+  "dependencies": {
+    "sign-addon": "^3.1.0",
+    "web-ext": "^5.1.0"
+  },
   "devDependencies": {
     "eslint": "^7.9.0",
     "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.0",
-    "web-ext": "^5.1.0"
+    "eslint-plugin-import": "^2.22.0"
   },
   "scripts": {
     "start": "web-ext --config=web-ext.config.js run",
     "build": "web-ext --config=web-ext.config.js build",
     "sign": "web-ext --config=web-ext.config.js sign",
     "lint": "web-ext --config=web-ext.config.js lint && eslint . --max-warnings 0",
-    "test": "yarn lint && yarn build"
+    "test": "yarn lint && yarn build",
+    "mozPublish": "PKG_VERSION=$npm_package_version node scripts/mozPublish.js"
   }
 }

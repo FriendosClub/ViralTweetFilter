@@ -12,6 +12,7 @@ module.exports = {
     'yarn.lock',
     '**/*.psd',
     '**/*.code-workspace',
+    'scripts/',
   ],
 
   // command-specific options
