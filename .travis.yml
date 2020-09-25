@@ -12,7 +12,7 @@ script:
 deploy:
   provider: script
   script:
-    - yarn sign
+    - yarn sign --channel=listed || true # HACK: Need a better way to publish this...
   on:
     tags: true
   skip_cleanup: true
