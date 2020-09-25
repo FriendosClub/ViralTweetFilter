@@ -1,6 +1,6 @@
 {
   "name": "viraltweetfilter",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Browser extension to filter \"viral\" Tweets from your timeline.",
   "main": "index.js",
   "repository": "https://github.com/FriendosClub/ViralTweetFilter.git",
