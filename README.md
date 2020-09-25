@@ -66,8 +66,8 @@ information about this process.
 - [ ] Localization
   - [ ] for add-on messages
   - [ ] for the decimal separator in `viraltweetfilter.js`
-- [ ] Allow user to configure 'like' threshold
-- [ ] Set up build/publish workflow
+- [x] Allow user to configure 'like' threshold
+- [x] Set up build/publish workflow
 - [ ] Chrome support
 
 
