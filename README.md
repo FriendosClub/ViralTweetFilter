@@ -1,5 +1,9 @@
 # Viral Tweet Filter
 
+[![Build Status](https://travis-ci.org/FriendosClub/ViralTweetFilter.svg?branch=master)][4]
+[![Firefox Add-On](https://img.shields.io/amo/v/viral-tweet-filter)][5]
+[![Code Style: Airbnb](https://img.shields.io/badge/code%20style-airbnb-blue)][6]
+
 A tool to hide Tweets that have more than a certain amount of likes.
 
 
@@ -91,3 +95,6 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 [1]: https://extensionworkshop.com/documentation/develop/web-ext-command-reference/#--firefox
 [2]: https://extensionworkshop.com/documentation/publish/submitting-an-add-on/
 [3]: https://extensionworkshop.com/documentation/develop/getting-started-with-web-ext/#packaging-your-extension
+[4]: https://travis-ci.org/FriendosClub/ViralTweetFilter
+[5]: https://addons.mozilla.org/en-US/firefox/addon/viral-tweet-filter/
+[6]: https://github.com/airbnb/javascript

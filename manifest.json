@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Viral Tweet Filter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Filters Tweets based on a customizable threshold of likes/retweets.",
   "icons": {
     "48": "icons/vtf-48.png",
