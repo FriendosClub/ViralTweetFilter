@@ -17,11 +17,16 @@
     "eslint-plugin-import": "^2.22.0"
   },
   "scripts": {
+    "mozManifest": "cp manifests/firefox.json manifest.json",
+    "crManifest": "cp manifests/chrome.json manifest.json",
+    "lint": "yarn run mozManifest && web-ext --config=web-ext.config.js lint && eslint . --max-warnings 0",
+    "mozBuild": "yarn run mozManifest && web-ext --config=web-ext.config.js build",
+    "crBuild": "yarn run crManifest && web-ext --config=web-ext.config.js build",
+    "mozPublish": "yarn run mozManifest && PKG_VERSION=$npm_package_version node scripts/mozPublish.js",
+    "mozSelfSign": "yarn run mozManifest && web-ext --config=web-ext.config.js sign",
+    "mozStart": "yarn run mozManifest && yarn start",
+    "crStart": "yarn run crManifest && yarn start -t chromium",
     "start": "web-ext --config=web-ext.config.js run",
-    "build": "web-ext --config=web-ext.config.js build",
-    "sign": "web-ext --config=web-ext.config.js sign",
-    "lint": "web-ext --config=web-ext.config.js lint && eslint . --max-warnings 0",
-    "test": "yarn lint && yarn build",
-    "mozPublish": "PKG_VERSION=$npm_package_version node scripts/mozPublish.js"
+    "clean": "rm -f web-ext-artifacts/*.zip web-ext-artifacts/*.xpi"
   }
 }

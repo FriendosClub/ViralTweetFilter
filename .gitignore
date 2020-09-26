@@ -1,6 +1,9 @@
 web-ext-artifacts/
 .DS_Store
 
+# specific manifests are now stored in manifests/
+manifest.json
+
 # Logs
 logs
 *.log

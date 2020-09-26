@@ -13,6 +13,8 @@ module.exports = {
     '**/*.psd',
     '**/*.code-workspace',
     'scripts/',
+    'manifests/',
+    'src/background.js',
   ],
 
   // command-specific options
