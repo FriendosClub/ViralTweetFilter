@@ -6,8 +6,10 @@ node_js:
 cache:
   yarn: true
 script:
-  - yarn lint
-  - yarn build
+  - yarn run lint
+  - yarn run crBuild # TODO: build to a different file for CI deployment to CWS
+  - yarn run clean
+  - yarn run mozBuild
 # Deploy update to AMO on tagged builds
 deploy:
   provider: script

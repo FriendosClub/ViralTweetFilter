@@ -5,7 +5,8 @@
   "description": "Filters Tweets based on a customizable threshold of likes/retweets.",
   "icons": {
     "48": "icons/vtf-48.png",
-    "96": "icons/vtf-96.png"
+    "96": "icons/vtf-96.png",
+    "128": "icons/vtf-128.png"
   },
   "background": {
     "scripts": [
@@ -28,7 +29,9 @@
     "default_popup": "src/page_actions/config.html",
     "default_icon": {
       "19": "icons/vtf-19.png",
-      "38": "icons/vtf-38.png"
+      "38": "icons/vtf-38.png",
+      "48": "icons/vtf-48.png",
+      "128": "icons/vtf-128.png"
     },
     "show_matches": [
       "*://twitter.com/home*"

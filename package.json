@@ -19,14 +19,15 @@
   "scripts": {
     "mozManifest": "cp manifests/firefox.json manifest.json",
     "crManifest": "cp manifests/chrome.json manifest.json",
-    "lint": "yarn run mozManifest && web-ext --config=web-ext.config.js lint && eslint . --max-warnings 0",
-    "mozBuild": "yarn run mozManifest && web-ext --config=web-ext.config.js build",
-    "crBuild": "yarn run crManifest && web-ext --config=web-ext.config.js build",
+    "lint": "yarn run mozManifest && web-ext lint && eslint . --max-warnings 0",
+    "mozBuild": "yarn run mozManifest && web-ext build",
+    "crBuild": "yarn run crManifest && web-ext build && yarn run crBackground",
+    "crBackground": "zip -gr web-ext-artifacts/viral_tweet_filter-$npm_package_version.zip src/background.js",
     "mozPublish": "yarn run mozManifest && PKG_VERSION=$npm_package_version node scripts/mozPublish.js",
-    "mozSelfSign": "yarn run mozManifest && web-ext --config=web-ext.config.js sign",
+    "mozSelfSign": "yarn run mozManifest && web-ext sign",
+    "start": "web-ext run",
     "mozStart": "yarn run mozManifest && yarn start",
     "crStart": "yarn run crManifest && yarn start -t chromium",
-    "start": "web-ext --config=web-ext.config.js run",
-    "clean": "rm -f web-ext-artifacts/*.zip web-ext-artifacts/*.xpi"
+    "clean": "rm -rf web-ext-artifacts manifest.json"
   }
 }
