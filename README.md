@@ -64,12 +64,7 @@ information about this process.
 
 ## Todo
 
-- [ ] Localization
-  - [ ] for add-on messages
-  - [ ] for the decimal separator in `viraltweetfilter.js`
-- [x] Allow user to configure 'like' threshold
-- [x] Set up build/publish workflow
-- [ ] Chrome support
+- [See the v1.0.0 milestone][7]
 
 
 ## License
@@ -99,3 +94,4 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 [4]: https://travis-ci.org/FriendosClub/ViralTweetFilter
 [5]: https://addons.mozilla.org/en-US/firefox/addon/viral-tweet-filter/
 [6]: https://github.com/airbnb/javascript
+[7]: https://github.com/FriendosClub/ViralTweetFilter/milestone/1
