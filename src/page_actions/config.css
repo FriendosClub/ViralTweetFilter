@@ -1,3 +1,7 @@
+html, body {
+  min-width: 300px;
+}
+
 .collapsed {
   display: none;
 }
