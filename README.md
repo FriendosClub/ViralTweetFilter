@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/FriendosClub/ViralTweetFilter.svg?branch=master)][4]
 [![Firefox Add-On](https://img.shields.io/amo/v/viral-tweet-filter)][5]
+![Chrome Web Store](https://img.shields.io/chrome-web-store/v/hgjnjpfcmgmdbfjdmmdciklmhhjmahmk?label=chrome%20extension)
 [![Code Style: Airbnb](https://img.shields.io/badge/code%20style-airbnb-blue)][6]
 
 A tool to hide Tweets that have more than a certain amount of likes.
