@@ -8,7 +8,7 @@ module.exports = {
   // global options
   ignoreFiles: [
     'package.json',
-    'web-ext.config.js',
+    'web-ext-config.js',
     'yarn.lock',
     '**/*.psd',
     '**/*.code-workspace',
