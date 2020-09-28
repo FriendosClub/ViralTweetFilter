@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function resetOutput() {
-  outputWrapper.classList.add('collapsed');
   outputWrapper.classList.remove('error', 'success');
+  outputWrapper.classList.add('collapsed');
 }
 
 settingsForm.addEventListener('submit', (event) => {
@@ -42,11 +42,11 @@ settingsForm.addEventListener('submit', (event) => {
   const threshold = parseInt(thresholdInput.value, 10);
   // TODO: Localize success and error messages
   if (Number.isNaN(threshold) || threshold < 1) {
+    outputWrapper.classList.add('error');
     outputText.innerHTML = 'Error: Not a valid number.';
-    outputWrapper.classList.add('failure');
   } else {
-    outputText.innerHTML = 'Settings saved.';
     outputWrapper.classList.add('success');
+    outputText.innerHTML = 'Settings saved.';
   }
 
   outputWrapper.classList.remove('collapsed');
