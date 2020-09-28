@@ -65,7 +65,7 @@ function filterTweet(tweet) {
       ? parseInt(parseFloat(numText, 10) * suffixes[suffix], 10)
       : parseInt(numText, 10);
 
-    if (likes > userThreshold) {
+    if (likes >= userThreshold) {
       debugMsg(`Hiding a Tweet with ${likes} likes.`);
       // eslint-disable-next-line no-param-reassign
       tweet.style.maxHeight = '0px';
