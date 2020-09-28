@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/FriendosClub/ViralTweetFilter.svg?branch=master)][4]
 [![Firefox Add-On](https://img.shields.io/amo/v/viral-tweet-filter)][5]
+![Chrome Web Store](https://img.shields.io/chrome-web-store/v/hgjnjpfcmgmdbfjdmmdciklmhhjmahmk?label=chrome%20extension)
 [![Code Style: Airbnb](https://img.shields.io/badge/code%20style-airbnb-blue)][6]
 
 A tool to hide Tweets that have more than a certain amount of likes.
@@ -63,12 +64,7 @@ information about this process.
 
 ## Todo
 
-- [ ] Localization
-  - [ ] for add-on messages
-  - [ ] for the decimal separator in `viraltweetfilter.js`
-- [x] Allow user to configure 'like' threshold
-- [x] Set up build/publish workflow
-- [ ] Chrome support
+- [See the v1.0.0 milestone][7]
 
 
 ## License
@@ -98,3 +94,4 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 [4]: https://travis-ci.org/FriendosClub/ViralTweetFilter
 [5]: https://addons.mozilla.org/en-US/firefox/addon/viral-tweet-filter/
 [6]: https://github.com/airbnb/javascript
+[7]: https://github.com/FriendosClub/ViralTweetFilter/milestone/1
