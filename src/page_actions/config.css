@@ -14,8 +14,19 @@ html, body {
   color: #0B7537;
 }
 
-input[type="submit"] {
+.float-right {
   float: right;
+}
+
+.space-between {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input[type="submit"] {
+  margin-left: auto;
   margin-bottom: 0!important;
   padding-left: 12pt;
   padding-right: 12pt;

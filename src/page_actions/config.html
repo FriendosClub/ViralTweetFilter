@@ -15,13 +15,26 @@
         <fieldset>
           <!-- TODO: Localize text displayed in this field -->
           <legend>Viral Tweet Filter Settings</legend>
+
           <label for="threshold">Minimum likes to hide Tweet</label>
           <input name="threshold" id="threshold" type="number" min="1" max="9007199254740991" placeholder="10000">
-          <input type="submit" id="saveSettings" value="Save">
-          <div id="output" class="collapsed">
-            <output>
-              <p id="outputText"></p>
-            </output>
+
+          <label for="delay">Delay between checks (ms)</label>
+          <input name="delay" id="delay" type="number" min="0" max="9007199254740991" placeholder="250">
+
+          <label for="enable" class="space-between">
+            Enable the filter?
+            <input type="checkbox" name="enable" id="enable" checked>
+          </label>
+
+          <div class="space-between">
+            <div id="output" class="collapsed">
+              <output>
+                <p id="outputText"></p>
+              </output>
+            </div>
+
+            <input type="submit" id="saveSettings" value="Save">
           </div>
         </fieldset>
       </form>
