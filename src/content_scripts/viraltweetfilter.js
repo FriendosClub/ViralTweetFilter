@@ -83,8 +83,19 @@ function filterTweet(tweet) {
   });
 }
 
+// TODO: Make this a user-customizable value
+let shouldFilter = true;
+const filterDelay = 250;
+
 // We don't pass the event itself to the function because we don't need it.
 window.addEventListener('scroll', () => {
+  if (!shouldFilter) { return; }
+  shouldFilter = false;
+
+  window.setTimeout(() => {
+    shouldFilter = true;
+  }, filterDelay);
+
   const tweets = document.querySelectorAll('main section article');
 
   tweets.forEach((tweet) => {
